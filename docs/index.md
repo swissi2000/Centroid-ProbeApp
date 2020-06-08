@@ -16,6 +16,41 @@ The enhancements of the ProbeApp probing cycles include fully qialified file nam
 # Implementation Details
 The ProbeApp is a Windows Application that runs outside of CNC12 and supports Touch Screen Input. 
 By default the ProbeApp uses M58 to integrate with CNC12, that means a customized mfunc58.mac will be copied to the c:\cncm folder and the M58 Button on the VCP 2.0 will be replaced with a Probing Icon.
+
+```javascript
+;--------------------------------------------------------------------------------
+; Filename: mfunc58.mac 
+; M58 macro
+; Description: Provides Probing Routines when used with program Probing_Setup.exe 
+; Author: swissi
+;---------------------------------------------------------------------------------
+#33999 = #4006                            ; store active units
+M130 "C:\cncm\probing\ProbeApp.exe"       ; Call the external probing cycle setup program
+#30000 = 0				      			  ; No probing Cycle saved when this stays 0
+N100
+G4 P1
+;+=============================================
+;|                     Probing Cycle in Progress!"
+;|
+;|                 Press "Cycle Cancle" to terminate
+;+=============================================
+M200 "Press Cycle Start to begin Probing Cycle\nPress Cycle Cancle to Exit"
+
+IF #50001 ;sync
+G65 "c:\cncm\ncfiles\probing_cycle.cnc"
+
+; restore active unit of meassure after probing
+IF #33999 == 20 THEN G20 ELSE G21
+
+; display message if no Probing Cycle has been found
+IF #30000 == -1 THEN M200 "No Probing Cycle found!\n\nPress Cycle Start"
+
+; display Error Message if Probing Cycle was aborted
+IF #30000 > 1 THEN G65 "#301\probe_error.cnc" A[#30000]
+
+N1000	;End of Macro
+```
+
 When you touch the probing icon on the VCP, the modified mfunc58.mac file will start up the ProbeApp and let you make any selections.
 When you press Start in the ProbeApp, it will generate all the probing moves based on your selection and will give the control back to CNC12 to execute them.
 
@@ -25,19 +60,12 @@ When you press Start in the ProbeApp, it will generate all the probing moves bas
 
 You can also use one of the Macro buttons on the MPG to start up the ProbeApp. If M58 is already taken on your system, you can move it to any other AUX button you have available.
 
+Instead of starting the ProbeApp from the VCP or MPG, you could start it from anywhere in your program with a M58 command when probing is needed. 
+As an example, if you need to set the Tool Height Offset after a Tool Change, you could add a M58 command to the end of the mfunc6.mac file.
+After a Tool Change the ProbeApp would be started to let you touch off the tool and the program would continue afterwards.
 
-* NEW in v2 [Safe Retracts](safeRetracts.md)
-* NEW in v2 [Smoothing Profile](smoothingProfile.md)
-* [Add Command to Begin/End of Job](addCommand.md)
-* [Add Debug Information](addDebug.md)
-* [Check Tool Offset](checkToolOffset.md)
-* [Enable Clamp (*M10/M11*)](enableClamp.md)
-* [Comment Line Formatting](commentFormatting.md)
-* [Dwell after Spindle Start](enableDwell.md)
-* [Enforce Numeric Program Name](forceNumeric.md)
-* [XY-Position at End of Job](xyPosition.md)
-* [Z-Position at End of Job](zPosition.md)
-* [Rotary Table Axis](rotaryAxis.md)
+
+
 * [Write CNC12 Info Variables](CNC12.md)
 
 ![](/images/pp001.PNG)
