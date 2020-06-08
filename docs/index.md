@@ -24,9 +24,9 @@ By default the ProbeApp uses M58 to integrate with CNC12, that means a customize
 ; Description: Provides Probing Routines when used with program Probing_Setup.exe 
 ; Author: swissi
 ;---------------------------------------------------------------------------------
-#33999 = #4006                            ; store active units
-M130 "C:\cncm\probing\ProbeApp.exe"       ; Call the external probing cycle setup program
-#30000 = 0				      			  ; No probing Cycle saved when this stays 0
+#33999 = #4006                       ; store active units
+M130 "C:\cncm\probing\ProbeApp.exe"  ; Call the external probing cycle setup program
+#30000 = 0                           ; No probing Cycle saved when this stays 0
 N100
 G4 P1
 ;+=============================================
@@ -54,11 +54,18 @@ N1000	;End of Macro
 When the probing icon on the VCP is touched, the modified mfunc58.mac file will start up the ProbeApp and let you make any selections.
 You can also use one of the Macro buttons on the MPG to start up the ProbeApp. If M58 is already taken on your system, you can move it to any other AUX button you have available.
 
-When you press Start in the ProbeApp, it will generate all the probing moves based on your selection and will give the control back to CNC12 to execute them.
-
 
 ![](/images/pa002.PNG)
 
+
+This is the screen of the Boss Probing Cycle as an example where the start of the probing cycle is selected at the left side of the Boss:
+
+
+![](/images/pa003.PNG)
+
+When the START button is pressed, the ProbeApp will generate all the probing moves based on the selection and will give the control back to CNC12 to execute them.
+
+![](/images/pa004.PNG)
 
 The probing moves are saved in the file
 ```
@@ -66,14 +73,14 @@ c:\cncm\ncfiles\probing_cycle.cnc
 ```
 This file name and location can be changed in the configuration settings.
 
-A output for a typical probing cycle looks like this:
+A output for the Boss Probing Cycle example above does look like this:
 ```
 ;Boss Probing Macro Start
 
 #30000 = 1    ; Global Error Variable reset to 1
 #34570 = 1    ; Start Axis X=1 Y=2
 #34571 = 1    ; Probing Cycle Orientation Plus Direction = 1, Negative Direction = -1
-#34572 = 39   ; Boss Diameter
+#34572 = 50   ; Boss Diameter
 #34573 = 10   ; Probing Cycle Z-Clearance
 
 G65 "C:\cncm\probing\probe_initialize.cnc"
@@ -104,12 +111,35 @@ It is also possible to open a certain probing cycle directly by adding a startup
 This call will open directly the screen of the Tripple Corner Plate Probing Cycle:
 
 ```
-G65 "c:\cncm\probing\ProbeApp.exe -cornerplate
+M130 "c:\cncm\probing\ProbeApp.exe -cornerplate"
 ```
 
 Use the start-up parameter -help to see all the available parameters
 
-* [Write CNC12 Info Variables](CNC12.md)
+![](/images/pa005.PNG)
+
+
+The values from each Probing Cycle screen are stored in the html configuration file ProbeApp.cfg. 
+When you re-open the ProbeApp the next time, the probing cycle will have all the values from the last time the cycle was used.
+
+
+# Probing Cycles
+ProbeApp supports the following Probing Cycles. Click the link to get detailed information on each cycle:
+
+* [Bore](Bore.md)
+* [Boss](Boss.md)
+* [Slot](Slot.md)
+* [Web](Web.md)
+* [Inside Corner](InCor.md)
+* [Outside Corner](OutCor.md)
+* [Single Axis](Single.md)
+* [Surface Angle](Angle.md)
+* [Stock Center XYZ](Cube.md)
+* [Stock Corner XYZ](TripleCorner.md)
+* [Triple Corner Plate with Bore](BorePlate.md)
+* [Triple Corner Plate](CornerPlate.md)
+* [Triple Corner Plate with Inside Square](InCorPlate.md)
+
 
 ![](/images/pp001.PNG)
 
