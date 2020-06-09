@@ -1,6 +1,6 @@
 # Boss Probing Cycle
 
-![](/images/pa007.PNG)
+![](/images/pa003.PNG)
 
 ## Description
 Find the center of a Boss. This probing cycle is not available for CNC12 Free.
