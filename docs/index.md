@@ -50,6 +50,10 @@ IF #30000 > 1 THEN G65 "#301\probe_error.cnc" A[#30000]
 
 N1000	;End of Macro
 ```
+The ProbeApp and all related probing cycle files will be installed to the newly created folder
+```
+c:\cncm\probing
+```
 
 When the probing icon on the VCP is touched, the modified mfunc58.mac file will start up the ProbeApp and let you make any selections.
 You can also use one of the Macro buttons on the MPG to start up the ProbeApp. If M58 is already taken on your system, you can move it to any other AUX button you have available.
@@ -67,7 +71,7 @@ When the START button is pressed, the ProbeApp will generate all the probing mov
 
 ![](/images/pa004.PNG)
 
-The probing moves are saved in the file
+The probing moves that CNC12 will execute are saved in the file
 ```
 c:\cncm\ncfiles\probing_cycle.cnc
 ```
