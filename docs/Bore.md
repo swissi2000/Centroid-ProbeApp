@@ -7,15 +7,15 @@ Find the center of a Bore Hole. This probing cycle is available for all versions
 
 ## Implementation Details
 The probe needs to be placed in the approximate center inside the bore hole.
-The Z-Height needs to be set at the level the measurements need to be taken inside the bore hole.
+The Z-Height has to be set at the level the measurements needs to be taken inside the bore hole.
 
 The probe will make the following moves and measurements:
 
-* Move to the X- side for the first measurements
-* Move to the X+ side for the second measurements
+* Move to the X- side for the first measurement
+* Move to the X+ side for the second measurement
 * Move to the calculated X-center based on the two X-measurements
-* Move to the Y- side for the third measurements
-* Move to the Y+ side for the fourth measurements
+* Move to the Y- side for the third measurement
+* Move to the Y+ side for the fourth measurement
 * Move to the calculated Y-center based on the two Y-measurements
 
 At the end of the probing cycle, the probe will be at the center of the bore hole and the diameter of the bore will be displayed:

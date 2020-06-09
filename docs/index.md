@@ -77,7 +77,7 @@ c:\cncm\ncfiles\probing_cycle.cnc
 ```
 This file name and location can be changed in the configuration settings.
 
-A output for the Boss Probing Cycle example above does look like this:
+The output for the Boss Probing Cycle example above looks like this:
 ```
 ;Boss Probing Macro Start
 
@@ -108,11 +108,11 @@ M99
 ```
 
 Instead of starting the ProbeApp from the VCP or MPG, you could start it from anywhere in your program with a M58 command when probing is needed. 
-As an example, if you need to set the Tool Height Offset after a Tool Change, you could add a M58 command to the end of the mfunc6.mac file.
+As an example for Router users, if you need to set the Tool Height Offset after a Tool Change, you could add a M58 command to the end of the mfunc6.mac file.
 After a Tool Change the ProbeApp would be started to let you touch off the tool and the program would continue afterwards.
 
-It is also possible to open a certain probing cycle directly by adding a startup parameter to the call that opens the ProbeApp. 
-This call will open directly the screen of the Tripple Corner Plate Probing Cycle:
+It is also possible to open a certain probing cycle directly by adding a startup parameter to the ProbeApp launch command. 
+This example will open directly the screen of the Tripple Corner Plate Probing Cycle:
 
 ```
 M130 "c:\cncm\probing\ProbeApp.exe -cornerplate"
@@ -123,12 +123,15 @@ Use the start-up parameter -help to see all the available parameters
 ![](/images/pa005.PNG)
 
 
-The values from each Probing Cycle screen are stored in the html configuration file ProbeApp.cfg. 
-When you re-open the ProbeApp the next time, the probing cycle will have all the values from the last time the cycle was used.
-
+The values from each Probing Cycle screen are stored in the html configuration file 
+```
+c:\cncm\probing\ProbeApp.cfg. 
+```
+When re-opening the ProbeApp the next time, the probing cycle will have all the values from the last time the cycle was used.
+The "*Last Cycle*" Button on the Main Screen will open the Probing Cycle that was last used in the ProbeApp.
 
 # Probing Cycles
-ProbeApp supports the following Probing Cycles. Click the link to get detailed information on each cycle:
+ProbeApp supports the following Probing Cycles. Click the links to get detailed information on each cycle:
 
 * [Bore](Bore.md)
 * [Boss](Boss.md)
@@ -144,14 +147,16 @@ ProbeApp supports the following Probing Cycles. Click the link to get detailed i
 * [Triple Corner Plate](CornerPlate.md)
 * [Triple Corner Plate with Inside Square](InCorPlate.md)
 
+# ProbeApp Customization
+There are two places where customizations can be done:
 
-![](/images/pp001.PNG)
+* [Configuration Button on the Main Screen of the ProbeApp](configuration.md)
+* [probe_initialize.cnc File](probe_initilize.md)
 
-# Additional Post Processor Logic
-Additional logic has been added to the Post Processor to support
-
-* NEW in v2 [Using Inverse Time Feedrate for Rotary Axis](inverseTime.md)
-* [Check for conflicting Tool Numbers (same Number but different Tools)](checkDuplicateTools.md)
-* [Support for Manual NC Commands](manualNC.md)
+Click the links above for a description of the customization options.
 
 
+
+# Versions of the ProbeApp
+
+ 
