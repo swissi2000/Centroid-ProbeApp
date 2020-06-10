@@ -62,7 +62,8 @@ You can also use one of the Macro buttons on the MPG to start up the ProbeApp. I
 ![](/images/pa002.PNG)
 
 
-This is the screen of the Boss Probing Cycle as an example where the start of the probing cycle is selected at the left side of the Boss:
+This is the screen of the Boss Probing Cycle as an example where the start of the probing cycle is selected at the left side of the Boss.
+Check out the chapter *Probing Cycles* below for screen shots and details about all supported Probing Cycles.
 
 
 ![](/images/pa003.PNG)

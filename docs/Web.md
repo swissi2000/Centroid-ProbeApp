@@ -76,7 +76,7 @@ A message will be displayed if any of the parameters are missing or invalid
 
 ![](/images/pa023.PNG)
 
-If no validation issues has been found, the ProbeApp will write all the necessary probing commands to
+If no validation issues have been found, the ProbeApp will write all the necessary probing commands to
 ```
 c:\cncm\ncfiles\probing_cycle.cnc
 ```
