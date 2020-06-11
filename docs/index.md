@@ -3,15 +3,29 @@
 ![](/images/pa001.PNG)
 
 The ProbeApp is a collection of probing cycles that integrate with the Centroid CNC12 control software.
-If you have tried to use the probing cycle files that come with CNC12 outside of CNC12, you might have experienced that many don't work as they don't use fully qualified file names.
-Also the Centroid probing cycles have hardcoded axis assignments and expect Axis 1=X, 2=Y and 3=Z.  
 
-The ProbeApp is using it's own enhanced probing cycles that are partially based on the original Centroid probing cycles with some additional, new cycles.
-The enhancements of the ProbeApp probing cycles include fully qialified file names for all cycles, Axis Number independence, improved error handling and some Probe Retry features 
+These are the currently supported Probing Cycles (Click the links to get detailed information on each cycle):
+
+* [Bore](Bore.md)
+* [Boss](Boss.md)
+* [Slot](Slot.md)
+* [Web](Web.md)
+* [Inside Corner](InCor.md)
+* [Outside Corner](OutCor.md)
+* [Single Axis](Single.md)
+* [Find Angle](Angle.md)
+* [3 Axis Center](Cube.md)
+* [3 Axis Corner](TripleCorner.md)
+* [Bore Plate](BorePlate.md)
+* [Corner Plate](CornerPlate.md)
+* [Square Plate](InCorPlate.md)
+
+The ProbeApp is using it's own, enhanced probing cycles that are based on the original Centroid probing cycles with some additional, new cycles.
+The enhancements of the ProbeApp probing cycles include fully qualified file names for all cycles, Axis Number independence, improved error handling and some Probe Retry features 
 (e.g if the given clearance height of a boss measurement is to low, the probing cycle will walk up the Z-Axis until the probe can traverse to the other side or a limit is tripped).
 
 
-**Please report issues as such in GitHub. No Warranties are given. Use at your own risk!**
+**No Warranties are given. Use at your own risk!**
 
 # Implementation Details
 The ProbeApp is a Windows Application that runs outside of CNC12 and supports Touch Screen Input. 
@@ -131,22 +145,6 @@ c:\cncm\probing\ProbeApp.cfg.
 When re-opening the ProbeApp the next time, the probing cycle will have all the values from the last time the cycle was used.
 The "*Last Cycle*" Button on the Main Screen will open the Probing Cycle that was last used in the ProbeApp.
 
-# Probing Cycles
-ProbeApp supports the following Probing Cycles. Click the links to get detailed information on each cycle:
-
-* [Bore](Bore.md)
-* [Boss](Boss.md)
-* [Slot](Slot.md)
-* [Web](Web.md)
-* [Inside Corner](InCor.md)
-* [Outside Corner](OutCor.md)
-* [Single Axis](Single.md)
-* [Surface Angle](Angle.md)
-* [Stock Center XYZ](Cube.md)
-* [Stock Corner XYZ](TripleCorner.md)
-* [Triple Corner Plate with Bore](BorePlate.md)
-* [Triple Corner Plate](CornerPlate.md)
-* [Triple Corner Plate with Inside Square](InCorPlate.md)
 
 # ProbeApp Customization
 There are two places where customizations can be done:
@@ -160,4 +158,4 @@ Click the links above for a description of the customization options.
 
 # Versions of the ProbeApp
 
- 
+# Metric versus Imperial Units

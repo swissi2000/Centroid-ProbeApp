@@ -71,7 +71,7 @@ Should the retry cycle hit any limits (e.g Probing Search Distance or travel lim
 If the WCS box is checked, at least one of the Axis needs to be checked too. 
 By default, WCS 0 for the axis will be set at the center of the Rectangular Stock for the currently *Active* WCS.
 
-Both axis allow to set WCS 0 at an *Offset* from the center if needed. For an offset in the negative axis direction, a negative value needs to be entered.
+All 3 axis allow to set WCS 0 at an *Offset* if needed. For an offset in the negative axis direction, a negative value needs to be entered.
 
 Note that the available WCS numbers depend on the version of CNC12:
 
