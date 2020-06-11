@@ -35,7 +35,7 @@ By default the ProbeApp uses M58 to integrate with CNC12, that means a customize
 ;--------------------------------------------------------------------------------
 ; Filename: mfunc58.mac 
 ; M58 macro
-; Description: Provides Probing Routines when used with program Probing_Setup.exe 
+; Description: Provides Probing Routines when used with program ProbeApp.exe 
 ; Author: swissi
 ;---------------------------------------------------------------------------------
 #33999 = #4006                       ; store active units
