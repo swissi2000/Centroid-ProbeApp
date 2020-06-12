@@ -155,7 +155,27 @@ There are two places where customizations can be done:
 Click the links above for a description of the customization options.
 
 
+# ProbeApp Functionality based on CNC12 Version
+The ProbeApp checks the version of CNC when being launched and adjusts functionality automatically to the restrictions of the different CNC12 versions.
 
-# Versions of the ProbeApp
+This is the Main Screen of the ProbeApp when used with the Free version of CNC12:
+
+![](/images/pa059.PNG)
+
+ProbeApp provides the same Probing Cycles for the CNC12 Pro and Digitizing Version.
+The only difference is the number of supported WCS:
+
+* CNC12 Free: Only WCS #1 (G54) is available
+* CNC12 Pro: WCS #1 - #6 (G54 - G59) are available
+* CNC12 Digi: WCS #1 - #18 (E1 - E18 where E1 - E6 is the same as G54 - G59) 
+
 
 # Metric versus Imperial Units
+If no Job File is running, CNC12 will always default to the configured Machine Units which is G20 for an Imperial and G21 for a Metric system.
+When the ProbeApp is launched while no job is running, the controller will already be set to the default machine units.
+
+When the ProbeApp is being launched within a running job file (e.g the tool change file mfunc6.mac calls M58 to touch of the new tool with the ProbeApp) it is possible that the running job does not run in the default machine units.
+In such a case the ProbeApp will force the machine into the default machine units to complete the probing cycle and switch the units back after the probing cycle has completed.
+
+That means that the ProbeApp will **ALWAYS** run in the machines default units and all values and configuration parameters used in the ProbeApp **MUST BE** in the **Machines Default Units**.
+ 

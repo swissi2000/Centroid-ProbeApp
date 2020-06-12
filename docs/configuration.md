@@ -19,7 +19,7 @@ When the START button is pressed, the probing moves are saved into a file for CN
 
 By default the name and location of this file is
 ```
-c:\cncm\ncfiles\probing_cycles.cncm\ncfiles\probing_cycles.cnc
+c:\cncm\ncfiles\probing_cycles.cnc
 ```
 Change the file name and location if preferred.
 
