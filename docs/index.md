@@ -58,6 +58,10 @@ When the ProbeApp is launched while no job is running, the controller will alrea
 When the ProbeApp is being launched within a running job file (e.g the tool change file mfunc6.mac calls M58 to touch off the new tool with the ProbeApp) it is possible that the running job does not run in the default machine units.
 In such a case the ProbeApp will force the machine into the default machine units to complete the probing cycle and switch the units back after the probing cycle has completed.
 
+If the active units don't match the machine units when the ProbeApp generated Probinc Cycle is executed by CNC, a warning message will be displayed
+
+![](/images/pa060.PNG)
+
 That means that the ProbeApp will **ALWAYS** run in the machines default units and all values and configuration parameters used in the ProbeApp **MUST BE** in the **Machines Default Units**.
  
 
