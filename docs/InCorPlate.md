@@ -92,15 +92,23 @@ The *Clamp Warning Message* can be customized. See [Configuration Options](confi
 
 ## Probing with Tool or Touch Probe
 
-![](/images/pa044.PNG)
+![](/images/pa061.PNG)
 
 Probing cycles can be made with a tool or a Touch Probe.
-Because the contact point of the tool/probe that triggers the touch off signal at the plate for a X/Y measurement is the outside of the tool/probe, the probing cycle needs to know the exact diameter of the tool/probe to calculate the center point.
 
 If *Probing with Touch Probe* is selected, the Touch Probe needs to be setup and configured properly in the CNC12 Wizard as the probing cycle will depend on the CNC12 probing parameters.
 
-If *Probing with Tool #* is selected, it is IMPORTANT that the tool diameter of the selected tool is properly configured in the CNC12 Offset Library for X/Y measurements. 
-So if Tool # 6 has been choosen that has a diameter of 4mm, the CNC12 Offset Library MUST be configured like this:
+When probing with a Tool, there are two options:
+
+### Tool Diameter 
+If you don't use the CNC12 Tool Libary and your G-Code is written/generated without Tool Diameter compensation, you can select this option. 
+
+If only a Z-Measurment is selected without a side or corner, no diameter value needs to be entered. For corner and side measurements, the Tool-Diameter is needed to calculate the corner or side position.
+
+### Probing with Tool #
+Here it is IMPORTANT that the tool diameter of the selected tool is properly configured in the CNC12 Offset Library for X/Y measurements. 
+
+As an example, if Tool # 6 has been choosen that has a diameter of 4mm, the CNC12 Offset Library MUST be configured like this:
 
 ![](/images/pa049.PNG)
 
