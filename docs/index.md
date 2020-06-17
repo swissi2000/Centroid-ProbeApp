@@ -36,7 +36,7 @@ There are two places where customizations can be done:
 Click the links above for a description of the customization options.
 
 
-# ProbeApp Functionality based on CNC12 Version
+# ProbeApp Functionality dependend on CNC12 Version
 The ProbeApp checks the version of CNC when being launched and adjusts functionality automatically to the restrictions of the different CNC12 versions.
 
 This is the Main Screen of the ProbeApp when used with the Free version of CNC12:
