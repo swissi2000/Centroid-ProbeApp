@@ -24,8 +24,11 @@ The ProbeApp is using it's own, enhanced probing cycles that are based on the or
 The enhancements of the ProbeApp probing cycles include fully qualified file names for all cycles, Axis Number independence, improved error handling and some Probe Retry features 
 (e.g if the given clearance height of a boss measurement is to low, the probing cycle will walk up the Z-Axis until the probe can traverse to the other side or a limit is tripped).
 
-
 **No Warranties are given. Use at your own risk!**
+
+* [ProbeApp Installation Instructions](install.md)
+
+# Installation Instructions
 
 # ProbeApp Customization
 There are two places where customizations can be done:
