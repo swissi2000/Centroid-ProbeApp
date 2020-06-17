@@ -94,11 +94,8 @@ The *Clamp Warning Message* can be customized. See [Configuration Options](confi
 
 ![](/images/pa061.PNG)
 
-Probing cycles can be made with a tool or a Touch Probe.
 
-If *Probing with Touch Probe* is selected, the Touch Probe needs to be setup and configured properly in the CNC12 Wizard as the probing cycle will depend on the CNC12 probing parameters.
-
-When probing with a Tool, there are two options:
+Probing can be done with a Tool or with a Touch Probe. There are 3 options that can be selected:
 
 ### Tool Diameter 
 If you don't use the CNC12 Tool Libary and your G-Code is written/generated without Tool Diameter compensation, you can select this option. 
@@ -121,6 +118,9 @@ Make sure that CNC12 does have the correct tool # active when you make this sele
 ![](/images/pa045.PNG)
 
 In the case where the CNC12 Tool Offset Library does have different Tool Height Offsets, it is important that the *Tool #* does match the tool # used in the job file.
+
+### Probing with Touch Probe
+If *Probing with Touch Probe* is selected, the Touch Probe needs to be setup and configured properly in the CNC12 Wizard as the probing cycle will depend on the CNC12 probing parameters.
 
 
 ## Start the Probing Cycle

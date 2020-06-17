@@ -1,5 +1,7 @@
 # Overview
 
+* [ProbeApp Installation Instructions](install.md)
+
 ![](/images/pa001.PNG)
 
 The ProbeApp is a collection of probing cycles that integrate with the Centroid CNC12 control software.
@@ -26,9 +28,6 @@ The enhancements of the ProbeApp probing cycles include fully qualified file nam
 
 **No Warranties are given. Use at your own risk!**
 
-* [ProbeApp Installation Instructions](install.md)
-
-# Installation Instructions
 
 # ProbeApp Customization
 There are two places where customizations can be done:
