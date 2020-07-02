@@ -18,7 +18,7 @@ The Universal Tool Setter Cycles support 3 different Tool Setting Methods:
 * Using a single, Movable Tool Touch Off Plate
 * Manual Tool Touch Off
 
-## *Method 1:* Using a Movable and a Fixed Tool Touch Off Plate
+## *Method 1:* Using a Movable and a Fixed Tool Touch Off
 
 ![](/images/pa065.PNG)
 
@@ -65,8 +65,18 @@ These options can be changed at any time and the ProbeApp will dynamically gener
 
 These are the descriptions what each option does:
 
-* *Show Message before Probing Movable TT:* If this option is checked, CNC12 will display a Message before the probing move with the Movable TT is executed. The message can be customized in the *Message* box (\n does create a new line in the message box). Be aware that not checking this box does directly engage the probing cycle when the *Cycle Start* button is pressed.
-* *Show Message after Probing Movable TT before Moving to Fixed TT:* Test
+#### Show Message before Probing Movable TT
+If this option is checked, CNC12 will display a Message before the probing move with the Movable TT is executed. 
+The message can be customized in the *Message* box (adding \n does create a new line in the message box). 
+
+Be aware that not checking this box does directly engage the probing cycle when the *Cycle Start* button is pressed. 
+A *Remainder* to attach a Clip could be added here. The message needs to be confirmed with a *Cycle Start*.
+
+#### Show Message after Probing Movable TT before Moving to Fixed TT:
+This will display a message after the probing cycle with the Movable TT has finished and the tool has been retracted. A *Remainder* can be added here to remove the Movable TT and Clip. Be aware that not checking this box will directly move the Tool to the Fixed TT position without warning. The message needs to be confirmed with a *Cycle Start*.
+* *Show Movable TT WCS Message:* This will display a WCS Reset message after the Movable TT has been probed. This allows to verify if Z0 has been set correctly. A time in Seconds can be set for the lenght of the message display before the cycle continues. A value of 0 will require to confirm the message with a *Cycle Start*.
+* *Show Fixed TT WCS/Offset Message:* For Cycle 2, this will display a WCS Reset message after the Fixed TT has been probed. For Cycle 1, this will display the measured *Reference Height Offset*. This allows to verify if Z0/Offset has been set correctly. A time in Seconds can be set for the lenght of the message display before the cycle continues. A value of 0 will require to confirm the message with a *Cycle Start*.
+* *Show Fixed TT WCS/Offset Message:* For Cycle 2, this will display a WCS Reset message after the Fixed TT has been probed. For Cycle 1, this will display the measured *Reference Height Offset*. This allows to verify if Z0/Offset has been set correctly. A time in Seconds can be set for the lenght of the message display before the cycle continues. A value of 0 will require to confirm the message with a *Cycle Start*.
 
 ## *Method 2:* Using a single, Movable Tool Touch Off Plate
 
