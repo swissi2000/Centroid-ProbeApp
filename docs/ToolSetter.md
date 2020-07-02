@@ -65,34 +65,24 @@ These options can be changed at any time and the ProbeApp will dynamically gener
 
 Check out the details below for each of these options.
 
-#### Show Message before Probing Movable TT
 ![](/images/pa074.PNG)
-
 If this option is checked, CNC12 will display a Message before the probing move with the Movable TT is executed. 
 The message can be customized in the *Message* box (adding \n does create a new line in the message box). 
 
 Be aware that not checking this box does directly engage the probing cycle when the *Cycle Start* button is pressed. 
 A *Remainder* to attach a Clip could be added here. The message needs to be confirmed with a *Cycle Start*.
 
-
-#### Show Message after Probing Movable TT before Moving to Fixed TT:
 ![](/images/pa075.PNG)
 
 This will display a message after the probing cycle with the Movable TT has finished and the tool has been retracted. A *Remainder* can be added here to remove the Movable TT and Clip. Be aware that not checking this box will directly move the Tool to the Fixed TT position without warning. The message needs to be confirmed with a *Cycle Start*.
 
-
-#### Show Movable TT WCS Message
 ![](/images/pa076.PNG)
-
 This will display a WCS Reset message after the Movable TT has been probed. 
 This allows to verify if Z0 has been set correctly. 
 A time in Seconds can be set for the lenght of the message display before the cycle continues. 
 A time value of 0 will require to confirm the message with a *Cycle Start*.
 
-
-#### Show Fixed TT WCS/Offset Message
 ![](/images/pa077.PNG)
-
 For Cycle 2, this will display a WCS Reset message after the Fixed TT has been probed. 
 
 For Cycle 1, this will display the measured *Reference Height Offset*. 
@@ -101,23 +91,15 @@ This allows to verify if Z0/Offset has been set correctly.
 A time in Seconds can be set for the lenght of the message display before the cycle continues. 
 A time value of 0 will require to confirm the message with a *Cycle Start*.
 
-
-#### Movable TT Test Message
 ![](/images/pa078.PNG)
-
 This is the text of the message that's being displayed before the test cycle of the Movable TT is being engaged if the *Test TT* option was selected om the main screen.
 Customize this message do your requirements. A \n within the message will force a line break in the CNC12 message box.
 
-#### Movable TT Test Confirmation Message
 ![](/images/pa079.PNG)
-
 This is the message that will be diplayed when the Movable TT succesfully recognized the TT trigger signal.
 The lenght of the display time in seconds can be selected for this message. A time value of 0 will require the message being confirmed with a *Cycle Start*.
 
-
-#### After Probing Movable TT Retract Z before moving to Fixed TT to
 ![](/images/pa080.PNG)
-
 This setting defines the Z position the machine should retract to after probing the Movable TT and before moving over to the Fixed TT. 
 This setting is only used in Cycle 1 that includes a probing cycle with the Movable TT.
 
@@ -138,17 +120,11 @@ If there's nothing in the way going from the Movable TT probing position to the 
 
 If a Z return value has been selected that is below the probing point, an error message will be displayed and the probing cycle will be aborted.
 
-
-#### At the End of the Probing Cycle Retract Z to
 ![](/images/pa081.PNG)
-
 This setting defines the Z position the machine should retract to at the end of the probing cycle after probing the Fixed TT.
 The vailable options are the same as above.
 
-
-#### At the End of the Probing Cycle move XY to
 ![](/images/pa082.PNG)
-
 Specifies the X and Y position the tool should move to at the end of the probing cycle.
 
 The available options are:
@@ -161,15 +137,10 @@ The available options are:
 
 Note that *No Move* is also an option here. This option will just retract Z abobe the Fixed TT to the selected Z return position and can be used if a Dust Shoe needs to be installed before continuing.
   
-
-#### Fixed TT Probing Location
 ![](/images/pa083.PNG)
-
 This specifies the X and Y position the machine needs to move to to probe with the Fixed TT.
 
-#### Movable and Fixed TT is configured as
 ![](/images/pa084.PNG)
-
 This probing cycle supports a Tool Touch Off device being installed as a Touch Probe. 
 
 If both, the Movable and the Fixed TT are of the same typ, they can be connected to the same Acorn Input and configured as a Tool Touch Off.
@@ -177,9 +148,7 @@ TTs of type NO need to be connected in parallel while NC type TTs need to be con
 
 In the case where one TT is of type NO and the other of Type NC, you can connect one TT to an Acorn Input configured as TT and the other to an Acorn Iput configured as TP
 
-####Movable TT Height Offset
 ![](/images/pa085.PNG)
-
 If you have configured the height of the Tool Touch Off in the CNC12 Wizard it will be stored in CNC12 System Parameter P71.
 ![](/images/pa087.PNG)
 There is some unexpected behavior in the way the Wizard configures P71 as the value you enter in the Wizard is positive but when you look up the parameter in CNC12 it will be stored as a negative number.
@@ -188,9 +157,7 @@ To work around this issue, the ProbeApp will always use the absolute value of P7
 
 You can always use P71 even when your Movable TT is configured as Touch Probe. If the TT Height is not set in CNC12 use the alternative option and enter the Height Offset here.
 
-#### Default Probing Speed Option
 ![](/images/pa086.PNG)
-
 The probing moves can be executen in a fast probing move first followed by a slow probing move or a slow probing move only.
 
 With this selection you define what your preferred, default probing behavior is.
