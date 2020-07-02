@@ -1,6 +1,6 @@
 # Overview
 
-* [ProbeApp Installation Instructions](install.md)
+* [ProbeApp Installation and Upgrade Instructions](install.md)
 
 ![](/images/pa001.PNG)
 
@@ -21,6 +21,7 @@ These are the currently supported Probing Cycles (Click the links to get detaile
 * [Bore Plate](BorePlate.md)
 * [Corner Plate](CornerPlate.md)
 * [Square Plate](InCorPlate.md)
+* [Tool Setter](ToolSetter.md)
 
 The ProbeApp is using it's own, enhanced probing cycles that are based on the original Centroid probing cycles with some additional, new cycles.
 The enhancements of the ProbeApp probing cycles include fully qualified file names for all cycles, Axis Number independence, improved error handling and some Probe Retry features 
@@ -78,17 +79,37 @@ By default the ProbeApp uses M58 to integrate with CNC12, that means a customize
 ; Description: Provides Probing Routines when used with program ProbeApp.exe 
 ; Author: swissi
 ;---------------------------------------------------------------------------------
-#33999 = #4006                       ; store active units
-M130 "C:\cncm\probing\ProbeApp.exe"  ; Call the external probing cycle setup program
-#30000 = 0                           ; No probing Cycle saved when this stays 0
+If #50001                                        ;Prevent lookahead from parsing past here
+If #4201 || #4202 Then GOTO 1000                 ;Skip macro if graphing or searching
+
+#33999 = #4006                                   ;Store active units
+G65 "c:\cncm\probing\probe_initialize.cnc" A99   ;Run Probe Initialization to check for Setup Errors (A99 = Don't check Inputs)
+If #50001                                        ;Prevent lookahead from parsing past here
+G65 "c:\cncm\probing\probe_save_parameters.cnc"  ;Save CNC12 Parameters to make them available in ProbeApp
+If #50001                                        ;Prevent lookahead from parsing past here
+;---------------------------------------------------------------------------------
+;Possible ProbeApp Startup Options to directly open a specific Probing Cycle
+;---------------------------------------------------------------------------------
+M130 "C:\cncm\probing\ProbeApp.exe"               ;Startup ProbeApp Main Screen
+;M130 "C:\cncm\probing\ProbeApp.exe -ToolSetter"   ;Startup ProbeApp directly with Universal Tool Setter Screen
+;M130 "C:\cncm\probing\ProbeApp.exe -CornerPlate"  ;Startup ProbeApp directly with Corner Plate Screen
+;M130 "C:\cncm\probing\ProbeApp.exe -InCorPlate"   ;Startup ProbeApp directly with Square Plate Screen
+;M130 "C:\cncm\probing\ProbeApp.exe -BorePlate"    ;Startup ProbeApp directly with Bore Plate Screen
+
+#30000 = 0                                         ;No probing Cycle saved when this remains at 0 
 N100
 G4 P1
+
 ;+=============================================
 ;|                     Probing Cycle in Progress!"
 ;|
 ;|                 Press "Cycle Cancle" to terminate
 ;+=============================================
-M200 "Press Cycle Start to begin Probing Cycle\nPress Cycle Cancle to Exit"
+M200 "Press Cycle Start to begin Probing Cycle\nPress Cycle Cancel to Exit"
+
+
+
+
 
 IF #50001 ;sync
 G65 "c:\cncm\ncfiles\probing_cycle.cnc"
@@ -97,7 +118,7 @@ G65 "c:\cncm\ncfiles\probing_cycle.cnc"
 IF #33999 == 20 THEN G20 ELSE G21
 
 ; display message if no Probing Cycle has been found
-IF #30000 == -1 THEN M200 "No Probing Cycle found!\n\nPress Cycle Start"
+IF #30000 == -1 THEN M200 "No Probing Cycle found!\n\nPress Cycle Start to Continue, Cycle Cancel to Abort"
 
 ; display Error Message if Probing Cycle was aborted
 IF #30000 > 1 THEN G65 "#301\probe_error.cnc" A[#30000]
