@@ -22,37 +22,39 @@ The Universal Tool Setter Cycles support 3 different Tool Setting Methods:
 
 ![](/images/pa065.PNG)
 
-This method uses two Tool Touch Off Plates (TT). The movable TT is being placed on top of the stock to find the exact position of the stocks top surface,
-the second TT is installed in a fixed location and is being used to automatically touch off all subsequent tools being used on the same workpiece.
+This method uses two Tool Touch Off Plates (TT). The movable TT is being placed on top of the workpiece to find the exact position of the top surface,
+the second TT is installed in a fixed location and is being used to automatically touch off all subsequent tools on the same workpiece.
 
-This method has three cycle options. Read  the description for each option carefully and make sure you select the appropriate cycle for each Tool Change.
+This method has three cycle options. Read  the description for each option carefully and make sure you select the appropriate cycle for each Tool Change at the right time.
 
-### Option 1: Probe Z0 and Reference Height Offset 
+
+### Cycle 1: Probe Z0 and Reference Height Offset 
 
 ![](/images/pa070.PNG)
 
-This cycle is being used on the first Tool Change after a new workpiece has been installed that has an unknown position of the workpiece top surface and involves two probing cycles.
+This cycle is being used on the first Tool Change after a new workpiece has been mounted that has an unknown top surface position. *Cycle 1* involves two probing cycles.
 
 The first probing cycle is using the movable TT on top of the workpiece and will measure the exact position of the top surface and will also set Z0 on top of the surface for the first tool.
 
 The second probing cycle is using the Fixed TT and is needed to calculate the *Reference Height Offset* which is the distance between the top of the Fixed TT and the top of the workpiece.
 
-The Reference Height Offset is used to correctly set the Tool Height Offset for subsequent tool changes on the same workpiece that are automatically touched off with the Fixed TT only.
+The Reference Height Offset is used to correctly set the Tool Height Offset for subsequent tool changes on the same workpiece by using the Fixed TT only.
 
-### Option 2: Set Z0 with Fixed TT - Ref Height Offset 
+
+### Cycle 2: Set Z0 with Fixed TT - Ref Height Offset 
 
 ![](/images/pa071.PNG)
 
-After a *Reference Height Offset* has been established with *Option 1*, all subsequent Tool Changes on the same workpiece can be done automatically by just touching the tool off the Fixed TT.
+After a *Reference Height Offset* has been established with *Cycle 1*, all subsequent Tool Changes on the same workpiece can be done with the Fixed TT only.
 
-Use this option for all subsequent Tool Changes on the same workpiece after the *Reference Tool Height* has been set with *Option 1*.
+Use this option for all subsequent Tool Changes on the same workpiece after the *Reference Tool Height* has been set with *Cycle 1*.
 
 
-### Option 3: Continue without Tool Probing 
+### Cycle 3: Continue without Tool Probing 
 
 ![](/images/pa072.PNG)
 
-If the Tool Setter screen is being launched by a M6 Tool Change command but no Tool Touch Off is needed, just press the *Option 3* button to continue the job without a Tool Touch Off.
+If the Tool Setter screen is being launched by a M6 Tool Change command but no Tool Touch Off is needed, the *Cycle 3* button allows to continue the job without a Tool Touch Off.
 
 ### Configuration for Movable and Fixed TT Method
 
@@ -63,7 +65,8 @@ These options can be changed at any time and the ProbeApp will dynamically gener
 
 These are the descriptions what each option does:
 
-* Show Message before Probing Movable TT: If this option is checked, CNC12 will display a Message before the probing move with the Movable TT is executed. 
+* *Show Message before Probing Movable TT:* If this option is checked, CNC12 will display a Message before the probing move with the Movable TT is executed. The message can be customized in the *Message* box (\n does create a new line in the message box). Be aware that not checking this box does directly engage the probing cycle when the *Cycle Start* button is pressed.
+* *Show Message after Probing Movable TT before Moving to Fixed TT:* Test
 
 ## *Method 2:* Using a single, Movable Tool Touch Off Plate
 
