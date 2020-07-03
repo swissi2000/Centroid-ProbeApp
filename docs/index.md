@@ -1,6 +1,7 @@
 # Overview
 
-* [ProbeApp Installation and Upgrade Instructions](install.md)
+* [ProbeApp Installation Instructions](install.md)
+* [ProbeApp Update Instructions](update.md)
 
 ![](/images/pa001.PNG)
 

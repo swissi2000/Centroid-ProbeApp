@@ -33,21 +33,7 @@ After the installation, you can customize the ProbeApp integration in any way yo
 
 * Make sure you read this User Guide for details on Integration and Functionality
 
-## Installing a newer Version of ProbeApp (Updating)
-When trying to install a newer version of the ProbeApp over an existing Installation, you might get this message:
-
-![](/images/pa063.PNG)
-
-In this situation, launch Windows *Add or remove programs*
-
-![](/images/pa064.PNG)
-
-Click the *ProbeApp-Setup* icon and select *Uninstall*.
-
-Note that the file *ProbeApp.cfg* that holds the history and configuration parameters of the ProbeApp will not be removed.
-
-
-
+To Update ProbeApp, see [ProbeApp Update Instructions](update.md)
 
 
 
