@@ -1,4 +1,4 @@
-# Method 1: Manual Tool Touch Off
+# Method 3: Manual Tool Touch Off
 
 ![](/images/pa069.PNG)
 
