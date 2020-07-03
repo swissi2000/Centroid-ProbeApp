@@ -1,4 +1,4 @@
-# Method 2: Using a single, Movable Tool Touch Off Plate
+# Method 2: Using a single, Movable Tool Touch Off
 
 ## Description
 

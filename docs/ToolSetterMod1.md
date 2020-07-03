@@ -1,4 +1,4 @@
-# Method 1: Movable and Fixed Tool Touch Off Configuration
+# Method 1: Movable and Fixed Tool Touch Off
 
 ## Description
 
