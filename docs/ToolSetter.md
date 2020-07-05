@@ -49,12 +49,13 @@ M130 "C:\cncm\probing\ProbeApp.exe -ToolSetter"   ;Startup ProbeApp directly wit
 ```
 
 If it is preferred that a M58 command will directly open the Tool Setter screen instead of the Main screen, modify the *mfunc58.mac* file as shown above.
+
 *NOTE* that changing the ProbeApp startup behavior in the *mfunc58.mac* file will also impact the behavior of the ProbeApp button on the Virtual Control panel. 
 
-By adding a simple M58 into the M6 Tool Change command will integrate the Tool Setter into every Tool Change.
+Adding a simple M58 into the M6 Tool Change command will integrate the Tool Setter into every Tool Change.
 
 Here's an Example of a minimalistic *mfunc6.mac* file:
-```
+``` javascript
 ;------------------------------------------------------------------------------
 ; File     : mfunc6.mac
 ; Purpose  : Minimalistic Tool change macro for Acorn CNC12 with ProbeApp integration
@@ -95,7 +96,7 @@ N1000                                       ;End of macro
 If it is preferred to have the ProbeApp button on the Virtual Control panel to bring up the ProbeApp Main screen but the M6 Tool Change command should bring up the Tool Setter,
 use the file *mfunc6.mac.customize-for-ProbeApp* that has been placed into the *C:\cncm\* folder, customize it to your requirements and save it as *mfunc6.mac*.
 
-```
+``` javascript
 ;------------------------------------------------------------------------------
 ; File     : mfunc6.mac - to be customized for use with ProbeApp and/or Fusion 360 Post Processor with enhanced Features
 ; Purpose  : Tool change macro for Acorn CNC12 - Extended Information Diplay and ProbeApp support
