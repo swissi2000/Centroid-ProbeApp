@@ -94,7 +94,7 @@ N1000                                       ;End of macro
 ```
 
 If it is preferred to have the ProbeApp button on the Virtual Control panel to bring up the ProbeApp Main screen but the M6 Tool Change command should bring up the Tool Setter,
-use the file *mfunc6.mac.customize-for-ProbeApp* that has been placed into the *C:\cncm\* folder, customize it to your requirements and save it as *mfunc6.mac*.
+use the file *mfunc6.mac.customize-for-ProbeApp* that has been placed into the *C:\cncm* folder, customize it to your requirements and save it as *mfunc6.mac*.
 
 ``` javascript
 ;------------------------------------------------------------------------------
