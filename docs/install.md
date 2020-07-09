@@ -19,6 +19,7 @@ After the installation, you can customize the ProbeApp integration in any way yo
 
 ## Installation Steps
 
+* Make a backup copy of the *C:\cncm* Folder so you can always go back quickly to your old install
 * Download *ProbeApp-Setup.msi* from the link that was provided
 * Make sure CNC12 is shut down
 * Double click *ProbeApp-Setup.msi* and accept all Defaults
