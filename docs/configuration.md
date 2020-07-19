@@ -25,6 +25,16 @@ Change the file name and location if preferred.
 
 **NOTE** that you need to adjust the mfunc58.mac (or any other macros you used to call the probing_cycle.cnc file) manually.
 
+## Enable Return Feature
+If this feature is enabled, a Check-Box named **Return** will appear on each Probing Cycle Screen next to the **START** Button:
+
+![](/images/pa098.PNG)
+
+If **Return** is checked when the **START** Button is clicked, the ProbeApp will add commands tro the probing cycle file that will re-open the ProbeApp after the probing cycle has finished.
+
+This feature is useful when the ProbeApp is being started from a running job, e.g. a M6 tool change command (*mfunc6.mac*).
+This will allow to execute several different probing cycles while the job is still in the M6 tool change hold to set WCS and Tool Height Offsets and then let the job continue after all probing has been completed.
+
 ## Show Probed Measurements
 Note that this setting only impacts a probing cycle that will set WCS.
 The default behavior is to display the probed measurements first and on a second screen present the WCS coordinates that will be set.
