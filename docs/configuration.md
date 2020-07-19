@@ -30,7 +30,7 @@ If this feature is enabled, a Check-Box named **Return** will appear on each Pro
 
 ![](/images/pa098.PNG)
 
-If **Return** is checked when the **START** Button is clicked, the ProbeApp will add commands tro the probing cycle file that will re-open the ProbeApp after the probing cycle has finished.
+If **Return** is checked when the **START** Button is clicked, the ProbeApp will add commands to the probing cycle file that will re-open the ProbeApp after the probing cycle has finished.
 
 This feature is useful when the ProbeApp is being started from a running job, e.g. a M6 tool change command (*mfunc6.mac*).
 This will allow to execute several different probing cycles while the job is still in the M6 tool change hold to set WCS and Tool Height Offsets and then let the job continue after all probing has been completed.
