@@ -38,6 +38,9 @@ If the Tool Setter screen is being launched by a M6 Tool Change command but no T
 ![](/images/pa068.PNG)
 
 The Configuration screen allows for a very flexible customization of the probing cycle. 
+The right side of the Configuration screen shows the currently configured CNC12 parameters related to Probing and Return Positions.
+This allows to verify the correctness of the CNC12 settings while customizing the ProbeApp Tool Setter configuration.
+
 These options can be changed at any time and the ProbeApp will dynamically generate the necessary probing commands for CNC12 based on current configuration settings. 
 
 Check out the details below for each of these options.
@@ -144,6 +147,14 @@ This setting impacts the default setting of the check box *Fast Probing First* o
 
 If you select *First Fast then Slow* here, the check box on the Cycle Main screen will always be selected by default and vice versa.
 
+![](/images/pa101.PNG)
+
+This allows to configure a dedicated slow and fast probing feedrate for the movable TT.
+These speed settings are only for the Tool Setter cycle and do not impact the probing speed settings in CNC12.
+
+If these probing feedrate values are left at 0, the default CNC12 probing feedrate values configured in the Probe Section of the CNC12 Wizard are being used.
+
+Note that the units (mm/min or inch/min) are displayed depending on the default units of the machine.
 
 
 
