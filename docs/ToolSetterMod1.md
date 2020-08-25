@@ -56,6 +56,9 @@ If the Tool Setter screen is being launched by a M6 Tool Change command but no T
 ![](/images/pa066.PNG)
 
 The Configuration screen allows for a very flexible customization of the probing cycle. 
+The right side of the Configuration screen shows the currently configured CNC12 parameters related to Probing and Return Positions.
+This allows to verify the correctness of the CNC12 settings while customizing the ProbeApp Tool Setter configuration.
+
 These options can be changed at any time and the ProbeApp will dynamically generate the necessary probing commands for CNC12 based on current configuration settings. 
 
 Check out the details below for each of these options.
@@ -71,6 +74,11 @@ A *Remainder* to attach a Clip could be added here. The message needs to be conf
 ![](/images/pa075.PNG)
 
 This will display a message after the probing cycle with the Movable TT has finished and the tool has been retracted. A *Remainder* can be added here to remove the Movable TT and Clip. Be aware that not checking this box will directly move the Tool to the Fixed TT position without warning. The message needs to be confirmed with a *Cycle Start*.
+
+![](/images/pa099.PNG)
+
+This option was added in v1.2 and will display a message after the probing cycle with the fixed TT has finished and the tool has been retracted. 
+A *Remainder* can be added here to attach the DUst Boot before the job continues. The message needs to be confirmed with a *Cycle Start*.
 
 ![](/images/pa076.PNG)
 
@@ -138,7 +146,7 @@ The available options are:
 * G53 with selectable X and Y Position
 * No Move
 
-Note that *No Move* is also an option here. This option will just retract Z abobe the Fixed TT to the selected Z return position and can be used if a Dust Shoe needs to be installed before continuing.
+Note that *No Move* is also an option here. This option will just retract Z abobe the Fixed TT to the selected Z return position and can be used if a Dust Boot needs to be installed before continuing.
   
 ![](/images/pa083.PNG)
 
@@ -166,12 +174,21 @@ You can always use P71 even when your Movable TT is configured as Touch Probe. I
 
 ![](/images/pa086.PNG)
 
-The probing moves can be executen in a fast probing move first followed by a slow probing move or a slow probing move only.
+The probing moves can be executed in a fast probing move first followed by a slow probing move or a slow probing move only.
 
-With this selection you define what your preferred, default probing behavior is.
-This setting impacts the default setting of the check box *Fast Probing First* on the Cycle Main screen.
+With this selection you define what your preferred, default probing behavior is. The defaults for the movable and fixed TT can be set seperately.
+This setting impacts the default settings of the check boxes *Movable/Fixed TT Fast Probing first* on the Tool Setter Cycle Main screen.
 
-If you select *First Fast then Slow* here, the check box on the Cycle Main screen will always be selected by default and vice versa.
+If you select *First Fast then Slow* here, the check boxes on the Tool Setter Cycle Main screen will always be selected by default and vice versa.
+
+![](/images/pa100.PNG)
+
+This allows to configure a dedicated slow and fast probing feedrate seperately for the movable and fixed TT.
+These speed settings are only for the Tool Setter cycle and do not impact the probing speed settings in CNC12.
+
+If these probing feedrate values are left at 0, the default CNC12 probing feedrate values configured in the Probe Section of the CNC12 Wizard are being used.
+
+Note that the units (mm/min or inch/min) are displayed depending on the default units of the machine.
 
 
 
