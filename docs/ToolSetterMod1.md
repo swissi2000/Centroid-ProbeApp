@@ -7,10 +7,13 @@
 This method uses two Tool Touch Off Plates (TT). The movable TT is being placed on top of the workpiece to find the exact position of the top surface,
 the second TT is installed in a fixed location and is being used to automatically touch off all subsequent tools on the same workpiece.
 
-Three options can be selected on the bottom right to customize the probing cycle:
+NOTE: This cycle can also be used with a "Hybrid" version where physically the same TT can be used as a movable and fixed TT. Instead of having a second, permanently installed fixed TT, the movable TT is placed on a fixed table position to act as the fixed TT.
+
+Four options can be selected on the bottom right to customize the probing cycle:
 
 * *Test TT (Movable TT only):* This will add a TT Trigger Check before the probing of the Movable TT is executed to assure that the TT is functioning properly.
-* *Fast Probing Speed First:* This check box will always default to the selected configuration setting and allows to temporarely enable or disable the fast probing move.
+* *Movable TT Fast Probing first:* This check box will always default to the selected configuration setting and allows to temporarely enable or disable the fast probing move for the movable TT.
+* *Fixed TT Fast Probing first:* This check box will always default to the selected configuration setting and allows to temporarely enable or disable the fast probing move for the fixed TT.
 * *Use WCS#:* This allows to select the WCS# that's being reset by this probing cycle. Default is always the currently active WCS#. The machine will remain in the currently active WCS and only switches quickly to the selected WCS for the Reset. 
 
 This method has three cycle options. Read  the description for each option carefully and make sure you select the appropriate cycle for each Tool Change at the right time.
