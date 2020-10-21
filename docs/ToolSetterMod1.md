@@ -78,7 +78,7 @@ This will display a message after the probing cycle with the Movable TT has fini
 ![](/images/pa099.PNG)
 
 This option was added in v1.2 and will display a message after the probing cycle with the fixed TT has finished and the tool has been retracted. 
-A *Remainder* can be added here to attach the DUst Boot before the job continues. The message needs to be confirmed with a *Cycle Start*.
+A *Remainder* can be added here to attach the Dust Boot before the job continues. The message needs to be confirmed with a *Cycle Start*.
 
 ![](/images/pa076.PNG)
 
