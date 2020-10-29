@@ -24,6 +24,7 @@ These are the currently supported Probing Cycles (Click the links to get detaile
 * [Corner Plate](CornerPlate.md)
 * [Square Plate](InCorPlate.md)
 * [Tool Setter](ToolSetter.md)
+* [Tool Offsetter](ToolOffsetter.md)
 
 The ProbeApp is using it's own, enhanced probing cycles that are based on the original Centroid probing cycles with some additional, new cycles.
 The enhancements of the ProbeApp probing cycles include fully qualified file names for all cycles, Axis Number independence, improved error handling and some Probe Retry features 
