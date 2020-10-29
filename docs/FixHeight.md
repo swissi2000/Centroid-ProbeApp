@@ -33,7 +33,7 @@ The coordinates of the Return Positions G28, G30, G30 P3 and G30 P4 must be conf
 
 For  the **Fix Z-Height Method**, Parameter 3 will be set to 2 by default. There's no need to change this unless you want to enable one of the other options provided by Parameter 3:
 
-![](/images/pa106.png)
+![](/images/pa106.PNG)
 
 Note that the ProbeApp can't change this parameter while CNC12 is running. You will get a message that you need to restart CNC12 for this Parameter to change. 
 It's also important to know that the setting of Parameter 3 does not have any impact as long as you only use the ProbeApp-Tool Offset Manager to measure the Tool Height Offsets.
