@@ -145,6 +145,74 @@ A typical Tool Offset Library Manager main screen for the **Fix Z-Height Method*
 
 ![](/images/pa119.png)
 
+### Feature List
+
+#### 1) Reference Height Method
+Indicates which Reference Height Method is currently active
+
+#### 2) Not matching Tool Diameter
+All values that are highlighted with red numbers on yellow background need attention. 
+In this case, the Tool Diameter currently stored in the CNC12 Tool Library does not match the Tool Diameter of this tool listed in the currently open job file and is being highlighted as a warning (see 4) about how Tool Information of the currently open Job File is imported into the Tool Offset Manager).
+
+#### 3) Missing Tool Height Offset
+Tool T2 is needed in the currently open job file but does not have a Tool Height Offset recorded in the CNC12 Tool Offset Library and is being highlighted as a warning that this tool needs to be measured and added to the tool offset library before it can be used correctly in the job file execution.
+
+#### 4) Tool Information from the currently open Job File
+When the Tool Offset Manager starts up, the ProbeApp is reading the currently open job file and imports the tool information if the Post Processor that created the job file has placed that information at the beginning comment section of the job file. The Tool number must be in the form of T1, T01 or T001 and the Diameter in the form of D=2.25.
+Here's an example how Fusion 360 inserts such Tool Information at the start of a job file as comment:
+
+```javascript
+(T2  D=8. ZMIN=-6. - flat end mill - 8mm Flat Endmill)
+(T4  D=50. ZMIN=-1. - face mill - 50mm Face Mill - Super Fly)
+```
+
+#### 5) Manual Tool Positioning
+If tools are measured with a Tool Touch Off device at a fixed location, some tools that have a large diameter or are oddly shaped can't be measured automatically and need to be positioned manually above the Tool Touch Off device before they can be measured.
+
+If this checkbox is being checked for a tool, the tool touch off probing cycle will pause above the Tooll Touch Off device with the message to manually position the tool.
+After the tool has beenn positione properly, pressing the Cycle Start button will resume the touch off process.
+
+This checkbox also works for machines that don't use the Tool Offset library for Tool Height Offsets and are using the ProbeApp-Tool Setter instead to touch off each tool with a fixed Tool Touch Off device.
+
+#### 6) Measure Button
+Press the **Measure** Button to measure the Tool Height Offset of that tool annd add it to the CNC12 Tool Offset Library.
+After the **Measure** button has been pressed, the ProbeApp will close and give control to CNC12 to execute the Tool Touch Off cycle.
+
+If the **Return** checkbox was checked (see 11) for more information about the Return function), the Tool Offset Library Manager will open again and show the measured Tool Height Offsetand allows for more tools to be measured. If the **Return** checkbox was not checked, the Tool Offset Library Manager will not reopen and the job file will continue if the ProbeApp was started from a running job or otherwise just return to CNC12.
+
+#### 7) Touch Probe
+If a system has a configured Touch Probe, it will be highlighted with a green background and the **Tool Info** column will mark it as the Touch Probe and does also list the Input number the Touch Probe is connected to.
+
+#### 8) Diameter and Height Offset Numbers
+It is important to understand that the Diameter Offset number (D#) and the Height Offset number (H#) are not the same as the actual Diameter value (D=5.5) or Height Offset Value (H=-10.51). The CNC12 Tool Library stores the Tool # and for each tool it holds the D# and H# that are associated with that tool. By default, the T#, D# and H# all match, which means that T1 has D1 and H1 assigned. The actual Diameter and Height Offset values for D1 and H1 are stored in a separate table, the Tool Geometry Offset Library.
+
+![](/images/pa120.png)
+![](/images/pa121.png)
+
+The CNC12 Tool Library allows to assign any D# or H# to any tool. This can severly complicate things if you start to mess with these assignments as you cannot just assume that T1 has D1 and H1 assigned as it could be any number in the valid range of 1 - 200.
+
+If any D# or H# in the CNC12 Tool Library does not match the T#, the Tool Offset Library Manager will highlight that D# or H# with red font on yellow background to bring that to your attention.
+
+Note that the ProbeApp-Tool Offset Library Manager doesn't allow you to change D# and H# to T# assignments. Such re-assignments must be completed in the CNC12 Tool Library directly.
+
+#### 9) Configuration Button
+When the Tool Offsetter is being launched for the first time, the Guided Setup will automatically start to generate the initial setup and configure everything according to the answers given. The **Configuration** Button allows to reopen the configuration screen to customize certain settings.
+
+If additional Probing Devices have been added to a machine or the machine was switched from none-fixed to fixed tool holding, it is recommended to run the **Guided Setup** again which is accessible from the **Configuration** screen.
+
+#### 10) Instructions
+Press the **Instructions** Button anytime to reopen the Instructions screen that hold information specific to the current configuration.
+
+#### 11) Return Function
+If the Return checkbox is checked, the Tool Offset Library Manager will reopen after the ProbeApp has closed to save data in CNC12 or to execute a Tool Touch Off cycle.
+Use the Configuration settings to configure if the Return checkbox is always checked by default or not.
+
+#### 12) EXIT/SAVE Button
+The status of this button will change between EXIT and SAVE depending if there's information that needs to be saved in CNC12.
+If this button is highlighted in bright green and displays SAVE, there is information that has changed and updates in CNC12 need to be done.
+Pressing the **SAVE** Button will close the ProbeApp and the Cycle Start button needs to be pressed to update information in CNC12.
+
+If this button shows SAVE and a Tool Height Offset measurement is started with the **Measure** Button, the Measure cycle will take care of also saving the pending updates in CNC12 automatically.
 
 
 [Back](index.md)
