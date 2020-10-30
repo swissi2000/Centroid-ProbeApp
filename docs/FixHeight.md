@@ -176,9 +176,9 @@ This checkbox also works for machines that don't use the Tool Offset library for
 
 #### 6) Measure Button
 Press the **Measure** Button to measure the Tool Height Offset of that tool annd add it to the CNC12 Tool Offset Library.
-After the **Measure** button has been pressed, the ProbeApp will close and give control to CNC12 to execute the Tool Touch Off cycle.
+After the **Measure** button has been pressed, the ProbeApp will close and give control to CNC12. Press the Cycle Start button to execute the Tool Touch Off cycle.
 
-If the **Return** checkbox was checked (see 11) for more information about the Return function), the Tool Offset Library Manager will open again and show the measured Tool Height Offsetand allows for more tools to be measured. If the **Return** checkbox was not checked, the Tool Offset Library Manager will not reopen and the job file will continue if the ProbeApp was started from a running job or otherwise just return to CNC12.
+If the **Return** checkbox was checked (see 11) for more information about the Return function), the Tool Offset Library Manager will open again and show the measured Tool Height Offset and allows for more tools to be measured. If the **Return** checkbox was not checked, the Tool Offset Library Manager will not reopen and the job file will continue if the ProbeApp was started from a running job or otherwise just return to CNC12.
 
 #### 7) Touch Probe
 If a system has a configured Touch Probe, it will be highlighted with a green background and the **Tool Info** column will mark it as the Touch Probe and does also list the Input number the Touch Probe is connected to.
@@ -187,6 +187,7 @@ If a system has a configured Touch Probe, it will be highlighted with a green ba
 It is important to understand that the Diameter Offset number (D#) and the Height Offset number (H#) are not the same as the actual Diameter value (D=5.5) or Height Offset Value (H=-10.51). The CNC12 Tool Library stores the Tool # and for each tool it holds the D# and H# that are associated with that tool. By default, the T#, D# and H# all match, which means that T1 has D1 and H1 assigned. The actual Diameter and Height Offset values for D1 and H1 are stored in a separate table, the Tool Geometry Offset Library.
 
 ![](/images/pa120.png)
+
 ![](/images/pa121.png)
 
 The CNC12 Tool Library allows to assign any D# or H# to any tool. This can severly complicate things if you start to mess with these assignments as you cannot just assume that T1 has D1 and H1 assigned as it could be any number in the valid range of 1 - 200.
@@ -201,7 +202,7 @@ When the Tool Offsetter is being launched for the first time, the Guided Setup w
 If additional Probing Devices have been added to a machine or the machine was switched from none-fixed to fixed tool holding, it is recommended to run the **Guided Setup** again which is accessible from the **Configuration** screen.
 
 #### 10) Instructions
-Press the **Instructions** Button anytime to reopen the Instructions screen that hold information specific to the current configuration.
+Press the **Instructions** Button anytime to reopen the Instructions screen that holds information specific to the current configuration.
 
 #### 11) Return Function
 If the Return checkbox is checked, the Tool Offset Library Manager will reopen after the ProbeApp has closed to save data in CNC12 or to execute a Tool Touch Off cycle.
