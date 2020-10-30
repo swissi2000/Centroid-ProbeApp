@@ -4,14 +4,14 @@
 This Method is for machines that have fixed Tool Holders and a constant distance between the Z-Home position and the machine table.
 The Reference Height will be set at the top of the Z-Axis at the Z-Home position and all Tool Height Offsets will be measured from the Z-Home Position to the point where the tool touches the Tool Touch Off Reference Surface. 
 
-The Reference Surface can be anywhere but it needs to be a position that never changes its Z-Height position and it needs to be the same position each time a new tool is being measured for tool height offset. The big benefit of tthis method is that it doesn't need a Reference Tool as the Reference Height is fixed at the Z-Home position.
+The Reference Surface can be anywhere but it needs to be a position that never changes its Z-Height position and it needs to be the same position each time a new tool is being measured for tool height offset. The big benefit of this method is that it doesn't require a Reference Tool as the Reference Height is fixed at the Z-Home position.
 
-It is important for this method to work accurately that the Z-Home position has an acceptable, repeatable position accuracy.
+It is important for this method to work accurately that the Z-Home position has acceptable, repeatable position accuracy.
 If you are unsure how accurate the Z-Home positioning of the machine is, the Guided Setup does provide a test cycle that resets the Z-Home position multiple times and measures the distance between the Z-Home position and the Reference Surface and will display the maximum deviation between all measuring cycles.
 
 ![](/images/pa107.png)
 
-The number of cycles that can be selected is between 3 and 10.
+The number of testing cycles that can be selected are between 3 and 10 times.
 If the accuracy of the Z-Home position is not good enough, the **Fix Z-Height Method**  can't be used and needs to be switched to the **Reference Tool Method**
 
 ## Configuration Settings
@@ -74,7 +74,7 @@ Possible options are:
 * G53 Z_
 * Start Pos
 
-See comments above about these options. An additional option here is to retact the Z-Axis to the Start Position which is the position at which the Tool Touch Off Cycle was started.
+See comments above about these options. An additional option here is to retract the Z-Axis to the Start Position, which is the position at which the Tool Touch Off Cycle was started.
 This can save time if you don't want to retract Z all the way up after a Tool Touch Off but be careful when you combine this option with the option to move the X and Y axes to a certain position after the Tool Touch Off as you need to make sure you always have enough Z Clearance.
 
 The default option is G28.
@@ -103,7 +103,7 @@ The default option is **No Move**.
 
 ![](/images/pa114.png)
 
-This selection depends on the type of Tool Touch Off device being used. If the Tool Touch Off device has a spring loaded touch off plate, it is recommended to do a more agressive fast probing move first followed by a slow accurate probing move. 
+This selection depends on the type of Tool Touch Off device being used. If the Tool Touch Off device has a spring loaded touch off plate, it is recommended to do a more aggressive fast probing move first followed by a slow accurate probing move. 
 
 If the Tool Touch Off device is a fixed metal plate it is recommended to skip the first fast probing move and run a slow probing move only to protect the tool.
 
@@ -111,7 +111,7 @@ If the Tool Touch Off device is a fixed metal plate it is recommended to skip th
 
 ![](/images/pa115.png)
 
-These settings allow to overwrite the default CNC12 slow and fast probing speeds just for the Tool Touch Off cycles.
+These settings allow overwriting the default CNC12 slow and fast probing speeds just for the Tool Touch Off cycles.
 If these values are left at 0, the default CNC12 probing speeds are being used.
 The currently configured CNC12 probing speeds are listed on the right side of the configuration screen.
 
@@ -137,7 +137,7 @@ After the configuration settings are saved, an Instruction screen like this will
 ![](/images/pa118.png)
 
 Read this information carefully as the instructions are dynamically created based on the configuration settings.
-Pressing the **OK** button willl close the Instructions page but the page can be re-openen anytime again with the **Instructions** button on the Tool Offset Manager main screen.
+Pressing the **OK** button will close the Instructions page but the page can be re-opened anytime again with the **Instructions** button on the Tool Offset Manager main screen.
 
 ## Tool Offset Library Manager
 
@@ -169,13 +169,13 @@ Here's an example how Fusion 360 inserts such Tool Information at the start of a
 #### 5) Manual Tool Positioning
 If tools are measured with a Tool Touch Off device at a fixed location, some tools that have a large diameter or are oddly shaped can't be measured automatically and need to be positioned manually above the Tool Touch Off device before they can be measured.
 
-If this checkbox is being checked for a tool, the tool touch off probing cycle will pause above the Tooll Touch Off device with the message to manually position the tool.
-After the tool has beenn positione properly, pressing the Cycle Start button will resume the touch off process.
+If this checkbox is being checked for a tool, the tool touch off probing cycle will pause above the Tool Touch Off device with the message to manually position the tool.
+After the tool has been positioned properly, pressing the Cycle Start button will resume the touch off process.
 
 This checkbox also works for machines that don't use the Tool Offset library for Tool Height Offsets and are using the ProbeApp-Tool Setter instead to touch off each tool with a fixed Tool Touch Off device.
 
 #### 6) Measure Button
-Press the **Measure** Button to measure the Tool Height Offset of that tool annd add it to the CNC12 Tool Offset Library.
+Press the **Measure** Button to measure the Tool Height Offset of that tool and add it to the CNC12 Tool Offset Library.
 After the **Measure** button has been pressed, the ProbeApp will close and give control to CNC12. Press the Cycle Start button to execute the Tool Touch Off cycle.
 
 If the **Return** checkbox was checked (see 11) for more information about the Return function), the Tool Offset Library Manager will open again and show the measured Tool Height Offset and allows for more tools to be measured. If the **Return** checkbox was not checked, the Tool Offset Library Manager will not reopen and the job file will continue if the ProbeApp was started from a running job or otherwise just return to CNC12.
@@ -190,16 +190,16 @@ It is important to understand that the Diameter Offset number (D#) and the Heigh
 
 ![](/images/pa121.png)
 
-The CNC12 Tool Library allows to assign any D# or H# to any tool. This can severly complicate things if you start to mess with these assignments as you cannot just assume that T1 has D1 and H1 assigned as it could be any number in the valid range of 1 - 200.
+The CNC12 Tool Library allows to assign any D# or H# to any tool. This can severely complicate things if you start to mess with these assignments as you cannot just assume that T1 has D1 and H1 assigned as it could be any number in the valid range of 1 - 200.
 
 If any D# or H# in the CNC12 Tool Library does not match the T#, the Tool Offset Library Manager will highlight that D# or H# with red font on yellow background to bring that to your attention.
 
 Note that the ProbeApp-Tool Offset Library Manager doesn't allow you to change D# and H# to T# assignments. Such re-assignments must be completed in the CNC12 Tool Library directly.
 
 #### 9) Configuration Button
-When the Tool Offsetter is being launched for the first time, the Guided Setup will automatically start to generate the initial setup and configure everything according to the answers given. The **Configuration** Button allows to reopen the configuration screen to customize certain settings.
+When the Tool Offsetter is being launched for the first time, the Guided Setup will automatically start to generate the initial setup and configure everything according to the answers given. The **Configuration** Button allows reopening the configuration screen to customize settings.
 
-If additional Probing Devices have been added to a machine or the machine was switched from none-fixed to fixed tool holding, it is recommended to run the **Guided Setup** again which is accessible from the **Configuration** screen.
+If additional Probing Devices have been added to a machine or the tool holding method has changed, it is recommended to run the **Guided Setup** again which is accessible from the **Configuration** screen.
 
 #### 10) Instructions
 Press the **Instructions** Button anytime to reopen the Instructions screen that holds information specific to the current configuration.
@@ -213,7 +213,8 @@ The status of this button will change between EXIT and SAVE depending if there's
 If this button is highlighted in bright green and displays SAVE, there is information that has changed and updates in CNC12 need to be done.
 Pressing the **SAVE** Button will close the ProbeApp and the Cycle Start button needs to be pressed to update information in CNC12.
 
-If this button shows SAVE and a Tool Height Offset measurement is started with the **Measure** Button, the Measure cycle will take care of also saving the pending updates in CNC12 automatically.
+If this button shows SAVE and a Tool Height Offset measurement is started with the **Measure** Button, the Measure cycle will take care of saving the pending updates in CNC12 automatically.
+
 
 
 [Back](index.md)
