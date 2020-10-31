@@ -206,7 +206,7 @@ It is important to understand that the Diameter Offset number (D#) and the Heigh
 
 The CNC12 Tool Library allows to assign any D# or H# to any tool. This can severely complicate things if you start to mess with these assignments as you cannot just assume that T1 has D1 and H1 assigned as it could be any number in the valid range of 1 - 200.
 
-If any D# or H# in the CNC12 Tool Library does not match the T#, the Tool Offset Library Manager will highlight that D# or H# with red font on yellow background to bring that to your attention.
+If any D# or H# in the CNC12 Tool Library does not match the T#, the Tool Offset Library Manager will highlight that D# or H# with red font on yellow background to bring that to your attention. If a tool has the same H# as the Reference Tool, this tool will also be forced to have a Tool Height Offset of 0 as one Height Offset Number (H#) can only hold one Height Offset value. Also if several tools are sharing the same D# or H#, if one of those tools is changed to a different D= or H= value, all tools in the table sharing the same D# or H# will be updated.
 
 Note that the ProbeApp-Tool Offset Library Manager doesn't allow you to change D# and H# to T# assignments. Such re-assignments must be completed in the CNC12 Tool Library directly.
 
