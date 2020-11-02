@@ -64,7 +64,7 @@ When the ProbeApp is launched while no job is running, the controller will alrea
 When the ProbeApp is being launched within a running job file (e.g the tool change file mfunc6.mac calls M58 to touch off the new tool with the ProbeApp) it is possible that the running job does not run in the default machine units.
 In such a case the ProbeApp will force the machine into the default machine units to complete the probing cycle and switch the units back after the probing cycle has completed.
 
-If the active units don't match the machine units when the ProbeApp generated Probinc Cycle is executed by CNC, a warning message will be displayed
+If the active units don't match the machine units when the ProbeApp generated Probing Cycle is executed by CNC, a warning message will be displayed
 
 ![](/images/pa060.PNG)
 
@@ -85,6 +85,7 @@ By default the ProbeApp uses M58 to integrate with CNC12, that means a customize
 If #50001                                        ;Prevent lookahead from parsing past here
 If #4201 || #4202 Then GOTO 1000                 ;Skip macro if graphing or searching
 
+N10
 #33999 = #4006                                   ;Store active units
 G65 "c:\cncm\probing\probe_initialize.cnc" A99   ;Run Probe Initialization to check for Setup Errors (A99 = Don't check Inputs)
 If #50001                                        ;Prevent lookahead from parsing past here
@@ -126,6 +127,8 @@ IF #30000 == -1 THEN M200 "No Probing Cycle found!\n\nPress Cycle Start to Conti
 ; display Error Message if Probing Cycle was aborted
 IF #30000 > 1 THEN G65 "#301\probe_error.cnc" A[#30000]
 
+IF #30000 == -99 Then GOTO 10  ; -99 indicates to reopen ProbeApp after Cycle
+#29500 = 0  ; reset ProbeApp Startup Overwrite flag
 N1000	;End of Macro
 ```
 The ProbeApp and all related probing cycle files will be installed to the newly created folder
