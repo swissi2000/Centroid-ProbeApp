@@ -3,6 +3,7 @@
 * [ProbeApp Installation Instructions](install.md)
 * [ProbeApp Update Instructions](update.md)
 * [ProbeApp Migrate to a new Version of CNC12](migrate.md)
+* [How to get Started with ProbeApp](GetStarted.md)
 
 ![](/images/pa001.PNG)
 
