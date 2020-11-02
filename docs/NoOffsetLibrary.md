@@ -14,20 +14,17 @@ The configuration page for the **Don't use Offset Library Method** does not requ
 
 ### Button Functions
 
-![](/images/pa117.png)
-
 * Cancel: Will abort the setup process 
 * Guided Setup: Use to re-run the Guided Setup if machine information has changed
 * Save Configuration: Saves the configuration settings and opens the Tool Offset Manager
 
 ## Save Configuration
-If the Tool Offset Library is not being used to store Tool Height Offsets, all Tool Height Offsets must be set to 0 for a save operation.
+If the Tool Offset Library is not being used to store Tool Height Offsets, all Tool Height Offsets must be set to 0 for a safe operation.
 If any of the Tool Height Offsets in the CNC12 Offset Library are currently not set to 0, the following warning message will be displayed:
 
 ![](/images/pa127.png)
 
 ## Instructions Page
-
 After the configuration settings are saved, an Instruction screen like this will be displayed:
 
 ![](/images/pa128.png)
@@ -36,13 +33,11 @@ Read this information carefully as the instructions are dynamically created base
 Pressing the **OK** button will close the Instructions page but the page can be re-opened anytime again with the **Instructions** button on the Tool Offset Manager main screen.
 
 ## Tool Offset Library Manager
-
 A typical Tool Offset Library Manager main screen for the **Don't use Offset Library Method** looks like this:
 
 ![](/images/pa129.png)
 
 ### Feature List
-
 #### 1) Reference Height Method
 Indicates which Reference Height Method is currently active
 
