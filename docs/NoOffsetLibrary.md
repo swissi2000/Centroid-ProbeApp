@@ -1,22 +1,14 @@
 # Tool Offset Manager: No Offset Library
 
 ## Description
-This Method is for machines that have fixed Tool Holders and a constant distance between the Z-Home position and the machine table.
-The Reference Height will be set at the top of the Z-Axis at the Z-Home position and all Tool Height Offsets will be measured from the Z-Home Position to the point where the tool touches the Tool Touch Off Reference Surface. 
+This Method is for machines that do not have fixed Tool Holders and therefore can't use the CNC12 Tool Offset Library for Tool Height Offsets.
+This method will enforce that the Tool Height Offsets for all tools are set to 0 in the CNC12 Tool Offset Library as this is a requirement for this method to work properly and safe.
 
-The Reference Surface can be anywhere but it needs to be a position that never changes its Z-Height position and it needs to be the same position each time a new tool is being measured for tool height offset. The big benefit of this method is that it doesn't require a Reference Tool as the Reference Height is fixed at the Z-Home position.
-
-It is important for this method to work accurately that the Z-Home position has acceptable, repeatable position accuracy.
-If you are unsure how accurate the Z-Home positioning of the machine is, the Guided Setup does provide a test cycle that resets the Z-Home position multiple times and measures the distance between the Z-Home position and the Reference Surface and will display the maximum deviation between all measuring cycles.
-
-![](/images/pa107.png)
-
-The number of testing cycles that can be selected are between 3 and 10 times.
-If the accuracy of the Z-Home position is not good enough, the **Fix Z-Height Method**  can't be used and needs to be switched to the **Reference Tool Method**
+Use the **ProbeApp-Tool Setter** to measure each Tool Height after each Tool Change as required when the spindle does not support fixed tool holders. 
 
 ## Configuration Settings
 
-The configuration page for the **Don't use Offset Library Method** does nnot require any settings:
+The configuration page for the **Don't use Offset Library Method** does not require any settings:
 
 ![](/images/pa126.png)
 
