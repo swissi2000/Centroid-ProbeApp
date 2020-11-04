@@ -73,7 +73,7 @@ These are the possible values:
 #29500 = 13 ; ToolSetter
 #29500 = 14 ; TripleCorner
 #29500 = 15 ; Web
-,,,
+```
 
 Use the #29500 to temporarely overwrite the default opening Probing Cycle specified in the **mfunc58.mac** macro file.
 
