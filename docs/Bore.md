@@ -84,7 +84,7 @@ Pressing *Cycle Start* at this point will also terminate the cycle.
 
 ![](/images/pa006a.PNG)
 
-This is a special version off the Bore Probe Cycle that is activated by checkking the box *3-Point Probing*.
+This is a special version off the Bore Probe Cycle that is activated by checking the box *3-Point Probing*.
 This cycle is useful if not all 4 sides of the bore can be used (e.g. one side has been milled out).
 
 Select the 3 points that should be measured. All the other functions work the same way as the regular Bore Cycle.
