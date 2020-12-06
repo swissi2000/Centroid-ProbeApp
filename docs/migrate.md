@@ -17,7 +17,7 @@
 
 ![](/images/pa131.png)
 
-* Select Repair ProbeApp Setup*
+* Select **Repair ProbeApp Setup**
 
 ![](/images/pa132.png)
 
